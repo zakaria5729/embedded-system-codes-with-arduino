@@ -1,10 +1,10 @@
 int trig = 5;
-int eco = 6;
+int echo = 6;
 
 void setup()
 {
   pinMode(trig, OUTPUT);
-  pinMode(eco, INPUT);
+  pinMode(echo, INPUT);
   Serial.begin(9600);
 }
 
@@ -19,14 +19,13 @@ void loop()
   digitalWrite(trig, LOW);
   
   //receiving
-  digitalWrite(eco, HIGH);
+  digitalWrite(echo, HIGH);
   
-  float time = pulseIn(eco, HIGH);
+  float time = pulseIn(echo, HIGH);
   float distance = (time * 0.034)/2; //distance in centimeter
   
   Serial.print(distance);
   Serial.println(" cm");
   
   delay(200);
-    
 }
