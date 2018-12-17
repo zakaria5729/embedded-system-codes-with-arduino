@@ -8,6 +8,16 @@ void setup()
   Serial.begin(9600);
   pinMode(PIR, INPUT);
   pinMode(LED, OUTPUT);
+  
+  //give the sensor some time to calibrate
+  Serial.print("calibrating sensor ");
+  for(int i = 0; i < calibrationTime; i++){
+     Serial.print(".");
+     delay(1000);
+  }
+  Serial.println("Done");
+  Serial.println("SENSOR ACTIVE");
+  delay(50);
 }
 
 void loop()
