@@ -1,6 +1,8 @@
 int PIR = 5;
 int LED = 13;
 
+//the time we give the sensor to calibrate (10-60 secs according to the datasheet)
+int calibrationTime = 30; 
 int pirState = HIGH; //set default value
 
 void setup()
